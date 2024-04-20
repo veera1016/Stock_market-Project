@@ -1,7 +1,12 @@
 pipeline{
     agent any
+
+    tools { // Specify the Git tool to use
+        git 'git'
+    }
+    
     stages {
-        stage('Build Maven') {
+        stage('checkout') {
             steps{
                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'a3b8dd6b-3e3a-4e2e-b8c1-ef8b44631258', url: 'https://github.com/veera1016/Stock_market-Project.git']])
             }
