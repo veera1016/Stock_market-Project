@@ -2,7 +2,7 @@ pipeline{
     agent any
 
     tools { // Specify the Git tool to use
-        git 'git'
+        git 'Default'
     }
     
     stages {
