@@ -3,7 +3,7 @@ pipeline{
     stages {
         stage('Build Maven') {
             steps{
-                checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: '2ec33201-353f-4de5-ad1e-7c8a9f7b768f', url: 'https://github.com/veera1016/jenkins-docker-image.git']])
+               checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'a3b8dd6b-3e3a-4e2e-b8c1-ef8b44631258', url: 'https://github.com/veera1016/Stock_market-Project.git']])
             }
         }
         
