@@ -1,5 +1,4 @@
-# stock_price_fetcher.py
-
+import sys
 import requests
 
 def fetch_stock_price(symbol):
@@ -20,7 +19,11 @@ def fetch_stock_price(symbol):
         return None
 
 if __name__ == "__main__":
-    symbol = input("Enter stock symbol: ")
+    if len(sys.argv) != 2:
+        print("Usage: python stock_price.py <stock_symbol>")
+        sys.exit(1)
+    
+    symbol = sys.argv[1]
     price = fetch_stock_price(symbol)
     if price:
         print(f"Current price of {symbol}: {price}")
